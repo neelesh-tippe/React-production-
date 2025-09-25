@@ -12,7 +12,7 @@ const SearchList = () => {
   const { searchData, searchText } = useContext(SearchResultContext);
   useMultiSearch(searchText);
   return (
-    <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2">
+    <div className="grid sm:grid-cols-5 md:grid-cols-4 sm:grid-cols-2">
       {searchData?.map((data: TVShowResult) => {
         return (
           <div key={data.id}>
