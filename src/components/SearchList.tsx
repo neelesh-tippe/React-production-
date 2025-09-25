@@ -9,24 +9,23 @@ import TVShowCard from "./TVShowCard";
 import { TVShowResult } from "@/hooks/useTVShowList";
 
 const SearchList = () => {
-
-    const {searchData, searchText} = useContext(SearchResultContext);
-    useMultiSearch(searchText);
+  const { searchData, searchText } = useContext(SearchResultContext);
+  useMultiSearch(searchText);
   return (
-    <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2">
-       {searchData?.map((data: TVShowResult) => {
+    <div className="grid sm:grid-cols-5 md:grid-cols-4 sm:grid-cols-2">
+      {searchData?.map((data: TVShowResult) => {
         return (
-            <div key={data.id}> 
+          <div key={data.id}>
             {data.media_type === "movie" ? (
-                <MovieCard movieResults={data}/>
+              <MovieCard movieResults={data} />
             ) : (
-                <TVShowCard TVResults={data}/>
+              <TVShowCard TVResults={data} />
             )}
-            </div>
-        )
-       })}
+          </div>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
 export default SearchList;
